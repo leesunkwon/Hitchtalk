@@ -1,35 +1,50 @@
-# Gradle files
+# Android / Gradle generated files
 .gradle/
-build/
 .kotlin/
-
-# Local configuration file (sdk path, etc)
-local.properties
-
-# Log/OS Files
-*.log
-
-# Android Studio generated files and folders
+build/
 captures/
 .externalNativeBuild/
 .cxx/
-*.aab
 *.apk
-output-metadata.json
-
-# IntelliJ
-*.iml
-.idea/
-misc.xml
-deploymentTargetDropDown.xml
-render.experimental.xml
-
-# Keystore files
-*.jks
-*.keystore
-
-# Google Services (e.g. APIs or Firebase)
-google-services.json
-
-# Android Profiling
+# The signed Release APK required for submission
+!/apk/이선권_Hitchtalk_release.apk
+*.aab
+*.apks
 *.hprof
+
+# IDE and machine-specific settings
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+local.properties
+local.properties.*
+!local.properties.example
+
+# Local environment and Firebase configuration
+.env
+.env.*
+!.env.example
+!.env.*.example
+!.env.sample
+google-services.json
+google-services-*.json
+*service-account*.json
+*serviceAccount*.json
+*firebase-adminsdk*.json
+
+# Signing credentials and private keys
+.signing/
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.pem
+*.key
+keystore.properties
+signing.properties
+
+# Optional backend dependencies and local output
+node_modules/
+coverage/
+*.log

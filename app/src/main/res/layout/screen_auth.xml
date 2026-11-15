@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:clipToPadding="false">
+    <com.kotlinsun.hitchtalk.ui.ContentColumn
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/hitch_space"
+        app:contentMaxWidth="@dimen/hitch_form_max_width">
+        <LinearLayout
+            style="@style/HitchCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/hitch_card_brand"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/hitch_space"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    style="@style/HitchLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/hitch_accent"
+                    android:text="@string/hitch_brand" />
+                <TextView
+                    android:id="@+id/modeTitle"
+                    style="@style/HitchHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/hitch_space"
+                    android:accessibilityHeading="true"
+                    android:text="@string/auth_login" />
+                <TextView
+                    style="@style/HitchCaption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/hitch_space"
+                    android:text="@string/design_virtual_note" />
+            </LinearLayout>
+            <com.kotlinsun.hitchtalk.avatar.AvatarView
+                android:id="@+id/mainAvatar"
+                android:layout_width="@dimen/hitch_avatar_small"
+                android:layout_height="@dimen/hitch_avatar_small"
+                android:contentDescription="@string/hitch_brand"
+                android:importantForAccessibility="noHideDescendants"
+                app:avatarKind="main" />
+        </LinearLayout>
+        <TextView
+            style="@style/HitchCallout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hitch_gutter"
+            android:background="@drawable/hitch_callout_informative"
+            android:textColor="@color/hitch_informative"
+            android:text="@string/auth_parked_note" />
+        <TextView
+            android:id="@+id/email_label"
+            style="@style/HitchLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hitch_gutter"
+            android:labelFor="@id/email"
+            android:text="@string/auth_email" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/email"
+            style="@style/HitchInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="emailAddress"
+            android:hint="@string/auth_email_hint"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
+            android:maxLength="254"
+            android:minHeight="@dimen/hitch_button_height"
+            android:singleLine="true"
+            android:layout_marginTop="@dimen/hitch_space" />
+        <TextView
+            android:id="@+id/password_label"
+            style="@style/HitchLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hitch_gutter"
+            android:labelFor="@id/password"
+            android:text="@string/auth_password" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/password"
+            style="@style/HitchInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="password"
+            android:hint="@string/auth_password_hint"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:maxLength="128"
+            android:minHeight="@dimen/hitch_button_height"
+            android:saveEnabled="false"
+            android:singleLine="true"
+            android:layout_marginTop="@dimen/hitch_space" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/resetPassword"
+            style="@style/HitchButton.Tertiary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/hitch_space"
+            android:text="@string/auth_reset_password" />
+        <LinearLayout
+            android:id="@+id/confirmContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <TextView
+                style="@style/HitchLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/hitch_gutter"
+                android:labelFor="@id/passwordConfirm"
+                android:text="@string/auth_password_confirm" />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/passwordConfirm"
+                style="@style/HitchInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="newPassword"
+                android:hint="@string/auth_password_confirm_hint"
+                android:imeOptions="actionNext"
+                android:inputType="textPassword"
+                android:maxLength="128"
+                android:minHeight="@dimen/hitch_button_height"
+                android:saveEnabled="false"
+                android:singleLine="true"
+                android:layout_marginTop="@dimen/hitch_space" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/registrationFields"
+            style="@style/HitchCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hitch_gutter"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <TextView
+                style="@style/HitchSectionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/refine_profile_section" />
+
+            <TextView
+                style="@style/HitchLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/hitch_space"
+                android:labelFor="@id/name"
+                android:text="@string/auth_name" />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/name"
+                style="@style/HitchInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="personName"
+                android:hint="@string/auth_name_hint"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:maxLength="60"
+                android:minHeight="@dimen/hitch_button_height"
+                android:singleLine="true"
+                android:layout_marginTop="@dimen/hitch_space" />
+            <TextView
+                style="@style/HitchLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/hitch_gutter"
+                android:labelFor="@id/birthDate"
+                android:text="@string/auth_birth_date" />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/birthDate"
+                style="@style/HitchInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="birthDateFull"
+                android:clickable="true"
+                android:cursorVisible="false"
+                android:focusable="true"
+                android:focusableInTouchMode="false"
+                android:longClickable="false"
+                android:hint="@string/auth_birth_date_hint"
+                android:inputType="none"
+                android:background="@drawable/hitch_spinner_field"
+                android:paddingEnd="44dp"
+                android:minHeight="@dimen/hitch_button_height"
+                android:singleLine="true"
+                android:layout_marginTop="@dimen/hitch_space" />
+            <TextView
+                style="@style/HitchLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/hitch_gutter"
+                android:labelFor="@id/gender"
+                android:text="@string/auth_gender" />
+            <Spinner
+                android:id="@+id/gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/auth_gender_choices"
+                android:minHeight="@dimen/hitch_button_height"
+                android:prompt="@string/auth_gender"
+                android:spinnerMode="dialog"
+                android:paddingEnd="44dp"
+                android:paddingStart="@dimen/hitch_gutter"
+                android:background="@drawable/hitch_spinner_field"
+                android:layout_marginTop="@dimen/hitch_space" />
+        </LinearLayout>
+        <CheckBox
+            android:id="@+id/consent"
+            style="@style/HitchBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hitch_gutter"
+            android:minHeight="48dp"
+            android:gravity="center_vertical"
+            android:paddingVertical="@dimen/hitch_space"
+            android:text="@string/auth_account_consent"
+            android:paddingHorizontal="@dimen/hitch_space"
+            android:background="@drawable/hitch_callout_informative"
+            android:visibility="gone" />
+        <TextView
+            android:id="@+id/status"
+            style="@style/HitchCallout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hitch_space"
+            android:accessibilityLiveRegion="polite"
+            android:visibility="gone" />
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/hitch_space"
+            android:visibility="gone"
+            android:contentDescription="@string/design_activity_busy"
+            android:indeterminateTint="@color/hitch_accent" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/submit"
+            style="@style/HitchButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hitch_gutter"
+            android:text="@string/auth_login" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/toggleMode"
+            style="@style/HitchButton.Outline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hitch_space"
+            android:text="@string/auth_signup" />
+    </com.kotlinsun.hitchtalk.ui.ContentColumn>
+</ScrollView>

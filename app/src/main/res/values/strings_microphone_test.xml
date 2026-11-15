@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="microphone_test_title">마이크 테스트</string>
+    <string name="microphone_test_summary">내 목소리가 입력되는지 확인하고 녹음한 소리를 들어보세요.</string>
+    <string name="microphone_test_open">마이크 테스트 열기</string>
+    <string name="microphone_test_permission">마이크 권한 허용</string>
+    <string name="microphone_test_permission_required">마이크 권한을 허용한 뒤 다시 열어 주세요.</string>
+    <string name="microphone_test_detail">최대 10초 동안 녹음한 뒤 직접 들어볼 수 있어요. 테스트 음성은 이 기기에만 임시 보관되며, 창을 닫으면 삭제돼요.</string>
+    <string name="microphone_test_ready">녹음 시작을 누르고 마이크에 말해 주세요.</string>
+    <string name="microphone_test_start_recording">녹음 시작</string>
+    <string name="microphone_test_stop_recording">녹음 중지</string>
+    <string name="microphone_test_record_again">다시 녹음</string>
+    <string name="microphone_test_recording">녹음 중이에요. 아래 막대가 움직이는지 확인해 주세요.</string>
+    <string name="microphone_test_elapsed">%1$d초 / 10초</string>
+    <string name="microphone_test_input_level">마이크 입력 크기</string>
+    <string name="microphone_test_recorded">녹음했어요. 녹음 듣기를 눌러 소리를 확인해 주세요.</string>
+    <string name="microphone_test_no_input">입력이 거의 감지되지 않았어요. 녹음 듣기로 확인하거나 마이크 설정을 확인해 주세요.</string>
+    <string name="microphone_test_play">녹음 듣기</string>
+    <string name="microphone_test_stop_playing">재생 중지</string>
+    <string name="microphone_test_preparing">녹음한 소리를 준비하고 있어요.</string>
+    <string name="microphone_test_playing">녹음한 소리를 재생하고 있어요.</string>
+    <string name="microphone_test_record_failed">녹음을 마치지 못했어요. 마이크 입력을 확인한 뒤 1초 이상 녹음해 주세요.</string>
+    <string name="microphone_test_play_failed">녹음한 소리를 재생하지 못했어요. 다시 녹음해 주세요.</string>
+    <string name="microphone_test_audio_busy">다른 오디오가 사용 중이에요. 재생이 끝난 뒤 다시 시도해 주세요.</string>
+    <string name="microphone_test_interrupted">다른 오디오를 위해 테스트를 중지했어요. 다시 녹음할 수 있어요.</string>
+    <string name="microphone_test_close">닫기</string>
+    <string name="microphone_test_emulator_hint">에뮬레이터에서 입력이 없으면 Extended Controls → Microphone → Enable Host Microphone Access를 켜 주세요. PC의 입력 마이크도 확인해 주세요.</string>
+</resources>

@@ -1,0 +1,33 @@
+<resources>
+    <style name="Theme.HitchTalk" parent="Theme.HitchTalk.Base">
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+    <color name="hitch_accent">#B7ACFF</color>
+    <color name="hitch_brand_weak">#2A2448</color>
+    <color name="hitch_brand_weak_pressed">#39305E</color>
+    <color name="hitch_surface">#16171B</color>
+    <color name="hitch_panel">#000000</color>
+    <color name="hitch_card_surface">#1D2025</color>
+    <color name="hitch_control">#2B2E35</color>
+    <color name="hitch_control_pressed">#393D46</color>
+    <color name="hitch_ink">#F3F4F5</color>
+    <color name="hitch_muted">#DCDEE3</color>
+    <color name="hitch_outline">#393D46</color>
+    <color name="hitch_focus_ring">#41A2F9</color>
+    <color name="hitch_disabled_surface">#2B2E35</color>
+    <color name="hitch_green">#35CE9A</color>
+    <color name="hitch_positive_weak">#202926</color>
+    <color name="hitch_warning">#DAB156</color>
+    <color name="hitch_warning_weak">#302819</color>
+    <color name="hitch_informative">#83BCF9</color>
+    <color name="hitch_informative_weak">#202742</color>
+    <color name="hitch_danger">#FFA299</color>
+    <color name="hitch_critical_weak">#322323</color>
+    <color name="hitch_critical_weak_pressed">#4F2624</color>
+    <color name="hitch_ripple">#0DFFFFFF</color>
+    <color name="hitch_avatar_purple">#B8ACFF</color>
+    <color name="hitch_avatar_sara">#67D6AA</color>
+    <color name="hitch_avatar_alex_surface">#2B2547</color>
+    <color name="hitch_avatar_sara_surface">#20372F</color>
+</resources>

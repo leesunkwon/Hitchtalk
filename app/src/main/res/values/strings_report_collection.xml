@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="journey_report_title">여행 리포트 · %1$s와 %2$s</string>
+    <string name="journey_minutes">%1$d분</string>
+    <string name="journey_seconds">%1$d초</string>
+    <string name="journey_metric_change">%1$+d점</string>
+    <string name="journey_metric_score">%1$d점</string>
+    <string name="journey_metric_unrated">연습 기록</string>
+    <string name="journey_metric_speech_count">%1$d단어</string>
+    <string name="journey_metric_completion_count">완결 %1$d / 평가 %2$d문장</string>
+    <string name="journey_metric_variety_count">표현 기능 %1$d / 8종</string>
+    <string name="journey_relationship_title">함께 쌓은 친밀도</string>
+    <string name="journey_relationship_detail">%1$s · %2$d XP</string>
+    <string name="journey_meetings">%1$d번째 만남</string>
+    <string name="journey_correction_original">내가 한 말</string>
+    <string name="journey_correction_natural">이렇게 말해봐</string>
+    <string name="journey_report_confirm">확인</string>
+    <string name="journey_report_collection">도감에서 보기</string>
+    <string name="journey_dex_count">만난 여행자 %1$d명</string>
+    <string name="journey_dex_meetings">%1$d번</string>
+    <string name="journey_dex_last_meeting">마지막 만남</string>
+    <string name="journey_dex_no_meeting">아직 만나기 전</string>
+    <string name="journey_dex_today">오늘</string>
+    <string name="journey_stage_first">알아가는 사이</string>
+    <string name="journey_stage_comfortable">편한 사이</string>
+    <string name="journey_stage_best">베스트 프렌드</string>
+    <string name="journey_stage_progress">%1$s · %2$d / %3$d XP</string>
+    <string name="journey_stage_complete">%1$s · %2$d XP</string>
+    <string name="journey_memory_item">· %1$s</string>
+</resources>

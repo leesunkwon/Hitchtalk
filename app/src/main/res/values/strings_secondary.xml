@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="secondary_back">뒤로</string>
+    <string name="secondary_back_symbol">‹</string>
+    <string name="report_title">여행 리포트</string>
+    <string name="report_title_with_traveler">여행 리포트 · %1$s와 동승</string>
+    <string name="report_preview">미리보기</string>
+    <string name="report_metric_speech">발화량</string>
+    <string name="report_metric_completion">문장 완성도</string>
+    <string name="report_metric_variety">표현 다양성</string>
+    <string name="report_metric_unavailable">—</string>
+    <string name="report_relationship">친밀도</string>
+    <string name="report_relationship_empty">아직 친밀도 변화가 없어요.</string>
+    <string name="report_learning">대화에서 배운 표현</string>
+    <string name="report_learning_empty">대화 데이터가 쌓이면 표시돼요.</string>
+    <string name="report_memory">새로운 기억</string>
+    <string name="report_memory_empty">아직 저장된 기억이 없어요.</string>
+    <string name="report_previous_promise_review">이전 약속 확인</string>
+    <string name="report_previous_promise_value">이전 약속 · %1$s</string>
+    <string name="report_next_promise">다음 만남에 기억할 약속</string>
+    <string name="report_unevaluable_count">평가되지 않은 문장 %1$d개</string>
+    <string name="report_open_collection">도감에서 보기</string>
+    <string name="report_done">확인</string>
+    <string name="collection_title">여행자 도감</string>
+    <string name="collection_alex">Alex</string>
+    <string name="collection_sara">Sara</string>
+    <string name="collection_alex_role">미국 · 테크 PM · 평일 아침</string>
+    <string name="collection_sara_role">호주 · 배낭여행자 · 주말</string>
+    <string name="collection_meetings">만난 횟수</string>
+    <string name="collection_history_empty">아직 기록이 없어요.</string>
+    <string name="collection_memory">함께 나눈 기억</string>
+    <string name="collection_memory_empty">아직 기록된 기억이 없어요.</string>
+    <string name="collection_reboard">다시 태우기</string>
+    <string name="collection_reboard_alex">Alex 다시 태우기</string>
+    <string name="collection_reboard_sara">Sara 다시 태우기</string>
+</resources>

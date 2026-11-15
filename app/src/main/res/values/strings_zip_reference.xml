@@ -1,0 +1,19 @@
+<resources>
+    <string name="zip_home_today">오늘의 대화</string>
+    <string name="zip_home_alex_topic">짧은 비즈니스 영어 · 약 15분</string>
+    <string name="zip_home_sara_topic">가볍고 친근한 여행 영어</string>
+    <string name="zip_home_safety">화면 조작은 정차(P) 중에만 가능해요. 주행 중에는 음성으로만 대화해요.</string>
+    <string name="zip_home_morning">좋은 아침이에요</string>
+    <string name="zip_home_afternoon">좋은 오후예요</string>
+    <string name="zip_home_evening">좋은 저녁이에요</string>
+    <string name="zip_home_familiarity">%1$s · %2$d번 만남</string>
+    <string name="zip_home_new_friend">첫 만남을 기다리고 있어요</string>
+    <string name="zip_home_acquaintance">알아가는 사이</string>
+    <string name="zip_home_comfortable">편한 사이</string>
+    <string name="zip_home_best_friend">베스트 프렌드</string>
+    <string name="zip_welcome_heading">운전길마다 영어 여행자를\n태워 1:1로 대화해 보세요</string>
+    <string name="zip_welcome_detail">출근길엔 Alex, 주말엔 Sara가 기다려요. 주행 중에는 음성으로만 대화해요.</string>
+    <string name="zip_welcome_email_login">이메일로 로그인</string>
+    <string name="zip_welcome_privacy">음성은 대화를 위해서만 처리돼요. 기록은 설정에서 언제든 지울 수 있어요.</string>
+    <string name="zip_welcome_permission_granted">허용됨</string>
+</resources>

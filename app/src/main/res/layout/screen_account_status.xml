@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <com.kotlinsun.hitchtalk.ui.ContentColumn
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingVertical="@dimen/hitch_gutter"
+        app:contentMaxWidth="@dimen/hitch_form_max_width">
+
+        <ImageView
+            android:layout_width="@dimen/hitch_avatar_medium"
+            android:layout_height="@dimen/hitch_avatar_medium"
+            android:importantForAccessibility="no"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/ic_launcher_round" />
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/HitchHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hitch_gutter"
+            android:accessibilityHeading="true"
+            android:accessibilityLiveRegion="polite"
+            android:gravity="center"
+            android:text="@string/refine_account_loading" />
+
+        <TextView
+            android:id="@+id/detail"
+            style="@style/HitchCaption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hitch_space"
+            android:gravity="center"
+            android:text="@string/refine_account_loading_detail" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="@dimen/hitch_gutter"
+            android:contentDescription="@string/design_activity_busy"
+            android:indeterminateTint="@color/hitch_accent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/retry_account"
+            style="@style/HitchButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hitch_gutter"
+            android:text="@string/voice_retry"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/switch_account"
+            style="@style/HitchButton.Secondary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hitch_space"
+            android:text="@string/refine_account_switch"
+            android:visibility="gone" />
+    </com.kotlinsun.hitchtalk.ui.ContentColumn>
+</ScrollView>

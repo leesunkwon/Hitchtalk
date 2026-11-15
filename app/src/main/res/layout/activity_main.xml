@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_root"
+    android:background="@color/hitch_panel">
+    <FrameLayout
+        android:id="@+id/screen_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/hitch_space"
+        android:layout_weight="1"
+        android:background="@drawable/hitch_card_white"
+        android:padding="@dimen/hitch_screen_padding" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/hitch_gutter">
+        <ProgressBar
+            android:id="@+id/busy_progress"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="@dimen/hitch_space"
+            android:contentDescription="@string/design_activity_busy"
+            android:indeterminateTint="@color/hitch_accent"
+            android:visibility="gone" />
+
+        <TextView
+            style="@style/HitchCallout"
+            android:id="@+id/status_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/hitch_space"
+            android:layout_weight="1"
+            android:accessibilityLiveRegion="polite"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end|center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/hitch_gutter">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/retry_sync"
+                style="@style/HitchButton.Compact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/hitch_space"
+                android:text="@string/settings_sync"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/debug_toggle"
+                style="@style/HitchButton.Tertiary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/hitch_space"
+                android:text="@string/design_debug_show"
+                android:visibility="gone" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/preview_controls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:visibility="gone"
+        android:background="@drawable/hitch_card_white">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/hitch_gutter">
+            <androidx.appcompat.widget.SwitchCompat
+                style="@style/HitchCaption"
+                android:id="@+id/simulation"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:saveEnabled="false"
+                android:text="@string/debug_simulation"
+                app:switchPadding="@dimen/hitch_space" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/console_preview"
+                style="@style/HitchCaption"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="@dimen/hitch_space"
+                android:saveEnabled="false"
+                android:text="@string/debug_console_preview"
+                android:visibility="gone"
+                app:switchPadding="@dimen/hitch_space" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/HitchButton.Compact"
+                android:id="@+id/gear_p"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="@string/hitch_gear_p"
+                android:layout_marginStart="@dimen/hitch_space"
+                android:contentDescription="@string/hitch_gear_p_label"
+                android:padding="0dp"
+                android:textColor="@color/hitch_gear_label" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/HitchButton.Compact"
+                android:id="@+id/gear_d"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="@string/hitch_gear_d"
+                android:layout_marginStart="@dimen/hitch_space"
+                android:contentDescription="@string/hitch_gear_d_label"
+                android:padding="0dp"
+                android:textColor="@color/hitch_gear_label" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/HitchButton.Compact"
+                android:id="@+id/gear_r"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="@string/hitch_gear_r"
+                android:layout_marginStart="@dimen/hitch_space"
+                android:contentDescription="@string/hitch_gear_r_label"
+                android:padding="0dp"
+                android:textColor="@color/hitch_gear_label" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/HitchButton.Compact"
+                android:id="@+id/gear_n"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="@string/hitch_gear_n"
+                android:layout_marginStart="@dimen/hitch_space"
+                android:contentDescription="@string/hitch_gear_n_label"
+                android:padding="0dp"
+                android:textColor="@color/hitch_gear_label" />
+
+            <CheckBox
+                style="@style/HitchCaption"
+                android:id="@+id/hazard"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:saveEnabled="false"
+                android:text="@string/debug_hazard"
+                android:layout_marginStart="@dimen/hitch_space" />
+
+            <CheckBox
+                style="@style/HitchCaption"
+                android:id="@+id/turn"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:saveEnabled="false"
+                android:text="@string/debug_turn"
+                android:layout_marginStart="@dimen/hitch_space" />
+
+            <CheckBox
+                style="@style/HitchCaption"
+                android:id="@+id/brake"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:saveEnabled="false"
+                android:text="@string/debug_brake"
+                android:layout_marginStart="@dimen/hitch_space" />
+
+            <CheckBox
+                style="@style/HitchCaption"
+                android:id="@+id/hvac"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:saveEnabled="false"
+                android:text="@string/debug_hvac"
+                android:layout_marginStart="@dimen/hitch_space" />
+        </LinearLayout>
+    </HorizontalScrollView>
+</LinearLayout>

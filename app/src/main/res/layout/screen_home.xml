@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:fillViewport="true" android:clipToPadding="false">
+    <com.kotlinsun.hitchtalk.ui.ContentColumn
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal" android:orientation="vertical"
+        app:contentMaxWidth="@dimen/hitch_overview_max_width">
+        <com.kotlinsun.hitchtalk.ui.PleosColumns
+            android:id="@+id/home_header"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:baselineAligned="false" app:columnMinWidth="420dp">
+            <TextView style="@style/HitchTitle" android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1"
+                android:accessibilityHeading="true" android:text="@string/hitch_brand" />
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <androidx.appcompat.widget.AppCompatButton android:id="@+id/history"
+                    style="@style/HitchButton.Tertiary" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="@string/design_history"
+                    android:visibility="gone"
+                    android:contentDescription="@string/design_history_full" />
+                <androidx.appcompat.widget.AppCompatButton android:id="@+id/collection"
+                    style="@style/HitchButton.Compact" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_marginStart="@dimen/hitch_space"
+                    android:text="@string/home_collection" />
+                <androidx.appcompat.widget.AppCompatButton android:id="@+id/settings"
+                    style="@style/HitchButton.Compact" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_marginStart="@dimen/hitch_space"
+                    android:text="@string/home_settings" />
+            </LinearLayout>
+        </com.kotlinsun.hitchtalk.ui.PleosColumns>
+        <TextView android:id="@+id/greeting" style="@style/HitchHeading"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="22dp" android:text="@string/home_greeting" android:accessibilityHeading="true" />
+        <TextView android:id="@+id/recommendation" style="@style/HitchCaption"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="4dp" android:text="@string/home_description" />
+        <include android:id="@+id/readiness" layout="@layout/view_readiness"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hitch_space" />
+        <com.kotlinsun.hitchtalk.ui.PleosColumns android:id="@+id/traveler_cards"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_weight="1" android:minHeight="420dp"
+            android:layout_marginTop="@dimen/hitch_gutter"
+            android:orientation="horizontal" android:baselineAligned="false" app:columnMinWidth="700dp">
+            <LinearLayout android:id="@+id/alex_card" style="@style/HitchCard"
+                android:layout_width="0dp" android:layout_height="match_parent"
+                android:layout_weight="1.75" android:minHeight="380dp" android:orientation="vertical"
+                android:background="@drawable/hitch_showcase_card_selected" android:padding="24dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:baselineAligned="false">
+                    <com.kotlinsun.hitchtalk.avatar.AvatarView android:id="@+id/alexAvatar"
+                        android:layout_width="112dp" android:layout_height="112dp"
+                        android:background="@drawable/hitch_avatar_tile_alex"
+                        android:importantForAccessibility="noHideDescendants" app:avatarKind="alex" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="@dimen/hitch_gutter" android:orientation="vertical">
+                        <TextView style="@style/HitchHeading" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="@string/home_alex" android:accessibilityHeading="true" />
+                        <TextView android:id="@+id/alex_recommendation" style="@style/HitchBadge"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp" android:text="@string/home_alex_recommendation" />
+                        <TextView style="@style/HitchBody" android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:layout_marginTop="@dimen/hitch_space"
+                            android:text="@string/home_alex_description" />
+                        <TextView android:id="@+id/alex_familiarity" style="@style/HitchCaption"
+                            android:layout_width="match_parent" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/hitch_gutter" android:padding="@dimen/hitch_gutter"
+                    android:background="@drawable/hitch_card_white" android:orientation="vertical">
+                    <TextView style="@style/HitchCaption" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:textColor="@color/hitch_accent"
+                        android:text="@string/zip_home_today" />
+                    <TextView style="@style/HitchBody" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:layout_marginTop="4dp"
+                        android:text="@string/home_alex_quote" />
+                    <TextView style="@style/HitchCaption" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:layout_marginTop="4dp"
+                        android:text="@string/zip_home_alex_topic" />
+                </LinearLayout>
+                <Space android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" />
+                <androidx.appcompat.widget.AppCompatButton android:id="@+id/boardAlex"
+                    style="@style/HitchButton" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:layout_marginTop="32dp"
+                    android:text="@string/home_board" android:contentDescription="@string/home_board_alex_description" />
+            </LinearLayout>
+            <LinearLayout android:id="@+id/sara_card" style="@style/HitchCard"
+                android:layout_width="0dp" android:layout_height="match_parent"
+                android:layout_weight="1" android:minHeight="380dp" android:orientation="vertical"
+                android:layout_marginStart="@dimen/hitch_gutter" android:padding="24dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:baselineAligned="false">
+                    <com.kotlinsun.hitchtalk.avatar.AvatarView android:id="@+id/saraAvatar"
+                        android:layout_width="88dp" android:layout_height="88dp"
+                        android:background="@drawable/hitch_avatar_tile_sara"
+                        android:importantForAccessibility="noHideDescendants" app:avatarKind="sara" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="@dimen/hitch_space" android:orientation="vertical">
+                        <TextView style="@style/HitchHeading" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="@string/home_sara" android:accessibilityHeading="true" />
+                        <TextView android:id="@+id/sara_recommendation" style="@style/HitchBadge"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp" android:text="@string/home_sara_recommendation" />
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView style="@style/HitchBody" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:layout_marginTop="@dimen/hitch_space"
+                    android:text="@string/home_sara_description" />
+                <TextView android:id="@+id/sara_familiarity" style="@style/HitchCaption"
+                    android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" />
+                <TextView style="@style/HitchBody" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:layout_marginTop="@dimen/hitch_gutter"
+                    android:text="@string/home_sara_quote" />
+                <TextView style="@style/HitchCaption" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:text="@string/zip_home_sara_topic" />
+                <Space android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" />
+                <androidx.appcompat.widget.AppCompatButton android:id="@+id/boardSara"
+                    style="@style/HitchButton.Secondary" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:layout_marginTop="32dp"
+                    android:text="@string/home_board_sara_description" />
+            </LinearLayout>
+        </com.kotlinsun.hitchtalk.ui.PleosColumns>
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/use_recommendation"
+            style="@style/HitchButton.Tertiary" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="@dimen/hitch_space"
+            android:text="@string/home_recommendation" />
+        <TextView style="@style/HitchCaption" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginTop="@dimen/hitch_gutter"
+            android:text="@string/zip_home_safety" />
+    </com.kotlinsun.hitchtalk.ui.ContentColumn>
+</ScrollView>

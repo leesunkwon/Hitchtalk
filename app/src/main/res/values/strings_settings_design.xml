@@ -1,0 +1,26 @@
+<resources>
+    <string name="settings_design_parked">정차(P) 중에만 변경할 수 있어요</string>
+    <string name="settings_design_difficulty">대화 난이도</string>
+    <string name="settings_design_voice">음성</string>
+    <string name="settings_design_memory">기억 관리</string>
+    <string name="settings_design_data">데이터</string>
+    <string name="settings_design_difficulty_note">여행자의 문장 길이와 어휘 수준이 바뀌어요</string>
+    <string name="settings_design_easy">쉬움</string>
+    <string name="settings_design_normal">보통</string>
+    <string name="settings_design_challenge">도전</string>
+    <string name="settings_design_rate">여행자 말하기 속도</string>
+    <string name="settings_design_rate_value">기본 속도</string>
+    <string name="settings_design_rate_note">Pleos 음성 서비스의 기본 속도를 사용해요</string>
+    <string name="settings_design_greeting">대화 시작 인사</string>
+    <string name="settings_design_greeting_note">탑승할 때 여행자가 먼저 인사해요</string>
+    <string name="settings_design_memory_alex">기억 · Alex</string>
+    <string name="settings_design_memory_sara">기억 · Sara</string>
+    <string name="settings_design_edit">수정</string>
+    <string name="settings_design_edit_alex">Alex 기억 수정</string>
+    <string name="settings_design_edit_sara">Sara 기억 수정</string>
+    <string name="settings_design_delete_alex">Alex 기억 삭제 범위 선택</string>
+    <string name="settings_design_delete_sara">Sara 기억 삭제 범위 선택</string>
+    <string name="settings_design_delete">삭제</string>
+    <string name="settings_design_clear_all">전체 삭제</string>
+    <string name="settings_design_email">로그인 계정</string>
+</resources>

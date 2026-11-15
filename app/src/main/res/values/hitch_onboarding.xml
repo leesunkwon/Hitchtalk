@@ -1,0 +1,12 @@
+<resources>
+    <style name="HitchOnboardingRow">
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="HitchOnboardingVisual">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginBottom">@dimen/hitch_gutter</item>
+    </style>
+    <style name="HitchOnboardingActions">
+        <item name="android:layout_width">match_parent</item>
+    </style>
+</resources>

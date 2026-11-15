@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/title"
+            style="@style/HitchTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:accessibilityHeading="true"
+            android:textColor="@color/hitch_muted" />
+        <TextView
+            style="@style/HitchCaption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/hitch_zip_lock"
+            android:drawablePadding="@dimen/hitch_space"
+            android:text="@string/zip_drive_lock" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingVertical="@dimen/hitch_gutter">
+        <ImageView
+            android:id="@+id/traveler_icon"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/hitch_zip_driving_halo"
+            android:contentDescription="@null"
+            android:importantForAccessibility="no"
+            android:visibility="gone" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hitch_gutter"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/voice_wave"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="@dimen/hitch_space"
+                android:contentDescription="@null"
+                android:importantForAccessibility="no"
+                android:src="@drawable/hitch_zip_wave"
+                android:visibility="gone"
+                app:tint="@color/hitch_green" />
+            <TextView
+                android:id="@+id/status"
+                style="@style/HitchBody"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/driving_message"
+            style="@style/HitchSectionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hitch_gutter"
+            android:gravity="center"
+            android:visibility="gone" />
+    </LinearLayout>
+</LinearLayout>

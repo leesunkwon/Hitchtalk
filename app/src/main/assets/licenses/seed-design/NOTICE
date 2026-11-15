@@ -1,0 +1,10 @@
+SEED Design System
+Copyright 2021 Danggeun Market Inc.
+https://github.com/daangn/seed-design
+
+HitchTalk adapts selected SEED palette, typography, spacing, radius, and
+component guidance for native Android Views. Foreground contrast, vehicle
+touch target dimensions, and existing character artwork colors are adapted
+for the in-vehicle interface. No SEED React or Lynx runtime is included.
+
+Licensed under the Apache License, Version 2.0. See LICENSE.

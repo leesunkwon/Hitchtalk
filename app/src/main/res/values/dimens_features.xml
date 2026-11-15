@@ -1,0 +1,14 @@
+<resources>
+    <!-- Use one column when Pleos gives the app a single split-screen panel. -->
+    <dimen name="hitch_columns_min_width">700dp</dimen>
+    <dimen name="hitch_ride_avatar_max">520dp</dimen>
+    <dimen name="hitch_form_max_width">640dp</dimen>
+    <dimen name="hitch_detail_max_width">1440dp</dimen>
+    <dimen name="hitch_overview_max_width">1600dp</dimen>
+    <dimen name="hitch_home_header_min_width">520dp</dimen>
+    <dimen name="hitch_action_row_min_width">480dp</dimen>
+    <dimen name="hitch_settings_fields_min_width">560dp</dimen>
+    <dimen name="hitch_settings_data_min_width">680dp</dimen>
+    <dimen name="hitch_avatar_card">72dp</dimen>
+    <dimen name="hitch_report_metrics_min_width">480dp</dimen>
+</resources>

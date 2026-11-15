@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="auth_account_consent">계정과 프로필을 Firebase에 저장하는 데 동의해요.</string>
+    <string name="setup_title">대화 설정</string>
+    <string name="setup_welcome">첫 여행을 준비해요</string>
+    <string name="setup_parked_note">정차 중에 난이도와 음성 대화 사용을 설정해요.</string>
+    <string name="setup_level_hint">선택한 난이도에 맞춰 여행자가 질문해요.</string>
+    <string name="setup_ai_consent">AI 음성 대화 사용</string>
+    <string name="setup_ai_notice">대화에 필요한 음성 인식 텍스트와 차량 상태를 OpenAI로 보내요. 확인한 기억과 여행 기록은 Firebase에 저장해요. 설정에서 언제든 사용을 끌 수 있어요.</string>
+    <string name="setup_microphone_granted">마이크 사용 가능</string>
+    <string name="setup_microphone_optional">대화할 때만 마이크 권한이 필요해요.</string>
+    <string name="setup_continue">저장하고 시작</string>
+    <string name="setup_consent_required">음성 대화를 사용하려면 대화 설정에서 허용해 주세요.</string>
+    <string name="setup_open">대화 설정 열기</string>
+    <string name="history_title">여행 기록</string>
+    <string name="history_description">최근 여행 20개의 리포트를 다시 볼 수 있어요.</string>
+    <string name="history_filter">여행자</string>
+    <string name="history_empty">아직 표시할 여행 기록이 없어요.</string>
+    <string name="history_open_report">리포트 보기</string>
+    <string name="history_open_report_for">%1$s 리포트 보기 · %2$s</string>
+    <string name="history_row_title">%1$s와 동승</string>
+    <string name="history_row_details">%1$s · %2$d턴</string>
+    <string name="history_pending">동기화 대기</string>
+    <string name="history_saved">저장됨</string>
+    <string name="history_scored">연습 점수 있음</string>
+    <string name="history_pending_count">동기화 대기 중인 항목 %1$d개</string>
+    <string name="history_record_label">지난 여행 · %1$s</string>
+    <string name="history_finish_report">목록으로</string>
+    <string name="settings_history_clear_confirm">여행 기록과 점수, 여행자별 기억과 친밀도를 지울까요? 계정과 대화 설정은 유지돼요.</string>
+    <string name="settings_history_cleared">여행 기록과 기억을 지웠어요.</string>
+    <string name="memory_deletion_title">삭제할 범위</string>
+    <string name="memory_delete_only">기억만 삭제</string>
+    <string name="memory_delete_with_records">이 여행자의 여행 기록까지 삭제</string>
+    <string name="memory_delete_only_confirm">여행자가 기억하는 직업·취향·약속을 지울까요? 이미 저장된 리포트의 요약과 교정은 남아요.</string>
+    <string name="report_analysis_unavailable_final">분석 결과를 가져오지 못했어요.</string>
+    <string name="report_no_corrections">이번 여행에 저장된 교정 예시는 없어요.</string>
+    <string name="report_not_enough_speech">교정할 발화가 아직 충분하지 않아요.</string>
+    <string name="report_unrated">평가 불가</string>
+    <string name="report_comparison_note">변화는 같은 점수 기준의 이전 유효 기록 최대 5개와 비교해요.</string>
+    <string name="report_memory_candidate_label">기억 후보 · 확인하면 저장돼요</string>
+    <string name="report_summary_label">여행 요약</string>
+    <string name="voice_connecting">음성을 연결하고 있어요.</string>
+    <string name="voice_signals_unavailable">차량의 비상등·방향지시등 상태를 확인할 수 없어 대화를 시작할 수 없어요.</string>
+    <string name="voice_safety_wait">차량 상태가 안정되면 대화할 수 있어요.</string>
+    <string name="voice_connection_required">음성 연결을 다시 시도해 주세요.</string>
+    <string name="voice_finish_pending">하차 다시 시도</string>
+    <string name="voice_ride_cancel_confirm">현재 동승을 종료할까요? 이번 대화의 리포트는 저장되지 않아요.</string>
+    <string name="voice_ride_cancel">동승 종료</string>
+    <string name="ride_focus_title">동승 중</string>
+    <string name="ride_show_quote">마지막 문장 보기</string>
+    <string name="ride_hide_quote">마지막 문장 접기</string>
+    <string name="home_suggested_now">지금 추천</string>
+    <string name="home_manual_traveler">선택한 여행자는 %1$s예요.</string>
+    <string name="home_selected_badge">선택한 여행자</string>
+    <string name="home_alex_window">평일 아침</string>
+    <string name="home_sara_window">주말 낮</string>
+    <string name="general_working">처리 중이에요.</string>
+    <string-array name="history_filter_choices">
+        <item>모든 여행자</item>
+        <item>Alex</item>
+        <item>Sara</item>
+    </string-array>
+    <string-array name="preferred_traveler_choices">
+        <item>시간대에 맞춰 추천</item>
+        <item>Alex</item>
+        <item>Sara</item>
+    </string-array>
+</resources>

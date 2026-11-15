@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="refine_profile_section">내 프로필</string>
+    <string name="refine_voice_section">음성 대화</string>
+    <string name="refine_open_voice_settings">음성 대화 및 마이크 설정</string>
+    <string name="refine_account_section">계정</string>
+    <string name="refine_delete_section">기록 및 계정 삭제</string>
+    <string name="refine_delete_history_action">여행 기록과 기억 삭제</string>
+    <string name="refine_delete_account_note">계정을 삭제하면 여행 리포트와 여행자별 기억도 함께 지워져요.</string>
+    <string name="refine_history_empty"><b>아직 여행 기록이 없어요</b>\n여행이 끝나면 리포트를 여기에서 다시 볼 수 있어요.</string>
+    <string name="refine_history_filter_empty"><b>선택한 여행자와의 기록이 없어요</b>\n다른 여행자를 선택하거나 모든 기록을 확인해 보세요.</string>
+</resources>

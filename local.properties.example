@@ -1,0 +1,8 @@
+# Copy this file to local.properties and enter your local values.
+# Android Studio can create sdk.dir automatically.
+# On Windows, use forward slashes in paths.
+# sdk.dir=C:/Users/YOUR_USER/AppData/Local/Android/Sdk
+
+# Optional: injected into both Debug and Release APKs at build time.
+# Leave empty to register a key from the app's settings instead.
+OPENAI_API_KEY=

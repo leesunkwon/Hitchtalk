@@ -1,0 +1,23 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false">
+        <shape>
+            <solid android:color="@color/hitch_disabled_surface" />
+            <corners android:radius="@dimen/hitch_control_radius" />
+            <stroke android:width="1dp" android:color="@color/hitch_outline" />
+        </shape>
+    </item>
+    <item android:state_focused="true">
+        <shape>
+            <solid android:color="@color/hitch_surface" />
+            <corners android:radius="@dimen/hitch_control_radius" />
+            <stroke android:width="2dp" android:color="@color/hitch_focus_ring" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <solid android:color="@color/hitch_surface" />
+            <corners android:radius="@dimen/hitch_control_radius" />
+            <stroke android:width="1dp" android:color="@color/hitch_field_outline" />
+        </shape>
+    </item>
+</selector>

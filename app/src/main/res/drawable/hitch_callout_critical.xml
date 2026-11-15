@@ -1,0 +1,4 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/hitch_critical_weak" />
+    <corners android:radius="@dimen/hitch_control_radius" />
+</shape>

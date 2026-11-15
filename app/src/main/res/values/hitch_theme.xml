@@ -1,0 +1,148 @@
+<resources>
+    <!-- Palette from the supplied HitchTalk screen references. -->
+    <!-- Stronger label colors keep vehicle controls and messages readable in both themes. -->
+    <color name="hitch_accent">#5B43FF</color>
+    <color name="hitch_brand_solid">#5B43FF</color>
+    <color name="hitch_brand_pressed">#4933DB</color>
+    <!-- White labels on the purple primary action. -->
+    <color name="hitch_on_accent">#FFFFFF</color>
+    <color name="hitch_brand_weak">#EFEBFF</color>
+    <color name="hitch_brand_weak_pressed">#E3DCFF</color>
+    <color name="hitch_surface">#FFFFFF</color>
+    <color name="hitch_panel">#F6F7F9</color>
+    <color name="hitch_card_surface">#F6F7F9</color>
+    <color name="hitch_control">#EBECEF</color>
+    <color name="hitch_control_pressed">#E1E2E7</color>
+    <color name="hitch_ink">#191A1E</color>
+    <color name="hitch_muted">#6F7074</color>
+    <color name="hitch_outline">#DCDEE3</color>
+    <!-- Gray and blue palette steps chosen for a distinct field outline and focus ring. -->
+    <color name="hitch_field_outline">#DCDEE3</color>
+    <color name="hitch_focus_ring">#5B43FF</color>
+    <color name="hitch_disabled_surface">#F3F4F5</color>
+    <color name="hitch_disabled_ink">#6B6C70</color>
+    <color name="hitch_green">#00B96B</color>
+    <color name="hitch_positive_weak">#EDFAF6</color>
+    <color name="hitch_warning">#755B22</color>
+    <color name="hitch_warning_weak">#FFF7DE</color>
+    <color name="hitch_informative">#135FCD</color>
+    <color name="hitch_informative_weak">#EFF6FF</color>
+    <color name="hitch_danger">#CA1D13</color>
+    <color name="hitch_critical_weak">#FDF0F0</color>
+    <color name="hitch_critical_weak_pressed">#FDE7E7</color>
+    <color name="hitch_ripple">#07000000</color>
+
+    <!-- Legacy aliases for existing layout and drawable references. -->
+    <color name="hitch_lavender">@color/hitch_brand_weak</color>
+    <color name="hitch_mint">@color/hitch_positive_weak</color>
+
+    <!-- Avatar identity colors are independent of the theme's semantic roles. -->
+    <color name="hitch_avatar_purple">#5B43FF</color>
+    <color name="hitch_avatar_sara">#087B53</color>
+    <color name="hitch_avatar_alex_surface">#EFECFF</color>
+    <color name="hitch_avatar_sara_surface">#E6F5EF</color>
+
+    <style name="HitchTitle">
+        <item name="android:textSize">@dimen/hitch_title_text</item>
+        <item name="android:lineHeight">@dimen/hitch_title_line</item>
+        <item name="android:textColor">@color/hitch_ink</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    <style name="HitchHeading" parent="HitchTitle">
+        <item name="android:textSize">@dimen/hitch_heading_text</item>
+        <item name="android:lineHeight">@dimen/hitch_heading_line</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="HitchBody">
+        <item name="android:textSize">@dimen/hitch_body_text</item>
+        <item name="android:lineHeight">@dimen/hitch_body_line</item>
+        <item name="android:textColor">@color/hitch_ink</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+    <style name="HitchCaption" parent="HitchBody">
+        <item name="android:textSize">@dimen/hitch_caption_text</item>
+        <item name="android:lineHeight">@dimen/hitch_caption_line</item>
+        <item name="android:textColor">@color/hitch_muted</item>
+    </style>
+    <style name="HitchLabel" parent="HitchCaption">
+        <item name="android:textColor">@color/hitch_ink</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    <style name="HitchSectionTitle" parent="HitchBody">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:accessibilityHeading">true</item>
+    </style>
+    <style name="HitchButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/hitch_button</item>
+        <item name="android:backgroundTint">@null</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:textColor">@color/hitch_button_label</item>
+        <item name="android:textSize">@dimen/hitch_body_text</item>
+        <item name="android:lineHeight">@dimen/hitch_body_line</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:minHeight">@dimen/hitch_button_height</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:paddingHorizontal">@dimen/hitch_gutter</item>
+        <item name="android:paddingVertical">@dimen/hitch_space</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:gravity">center</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+    <style name="HitchButton.Secondary">
+        <item name="android:background">@drawable/hitch_button_secondary</item>
+        <item name="android:textColor">@color/hitch_button_secondary_label</item>
+    </style>
+    <style name="HitchButton.Compact" parent="HitchButton.Secondary">
+        <item name="android:minHeight">@dimen/hitch_header_button_height</item>
+        <item name="android:paddingHorizontal">@dimen/hitch_compact_button_padding</item>
+        <item name="android:textSize">@dimen/hitch_caption_text</item>
+        <item name="android:lineHeight">@dimen/hitch_caption_line</item>
+    </style>
+    <style name="HitchButton.Tertiary" parent="HitchButton.Compact">
+        <item name="android:background">@drawable/hitch_button_tertiary</item>
+        <item name="android:textColor">@color/hitch_button_tertiary_label</item>
+    </style>
+    <style name="HitchButton.Danger" parent="HitchButton.Secondary">
+        <item name="android:background">@drawable/hitch_button_danger</item>
+        <item name="android:textColor">@color/hitch_button_danger_label</item>
+    </style>
+    <style name="HitchButton.Outline" parent="HitchButton.Secondary">
+        <item name="android:background">@drawable/hitch_button_outline</item>
+        <item name="android:textColor">@color/hitch_button_outline_label</item>
+    </style>
+    <style name="HitchCard">
+        <item name="android:background">@drawable/hitch_card_gray</item>
+        <item name="android:padding">@dimen/hitch_card_padding</item>
+    </style>
+    <style name="HitchInput" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/hitch_field</item>
+        <item name="android:backgroundTint">@null</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:textColor">@color/hitch_input_label</item>
+        <item name="android:textColorHint">@color/hitch_muted</item>
+        <item name="android:textSize">@dimen/hitch_body_text</item>
+        <item name="android:lineHeight">@dimen/hitch_body_line</item>
+        <item name="android:minHeight">@dimen/hitch_button_height</item>
+        <item name="android:paddingHorizontal">@dimen/hitch_gutter</item>
+        <item name="android:paddingVertical">@dimen/hitch_space</item>
+    </style>
+    <style name="HitchBadge" parent="HitchLabel">
+        <item name="android:background">@drawable/hitch_badge_neutral</item>
+        <item name="android:textColor">@color/hitch_muted</item>
+        <item name="android:paddingHorizontal">@dimen/hitch_badge_padding_horizontal</item>
+        <item name="android:paddingVertical">@dimen/hitch_badge_padding_vertical</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="HitchChip" parent="HitchBadge" />
+    <style name="HitchCallout" parent="HitchCaption">
+        <item name="android:background">@drawable/hitch_callout_neutral</item>
+        <item name="android:textColor">@color/hitch_ink</item>
+        <item name="android:padding">@dimen/hitch_callout_padding</item>
+        <item name="android:gravity">start|center_vertical</item>
+    </style>
+    <style name="HitchSampleQuote" parent="HitchCallout">
+        <item name="android:background">@drawable/hitch_quote_surface</item>
+        <item name="android:textColor">@color/hitch_muted</item>
+    </style>
+</resources>

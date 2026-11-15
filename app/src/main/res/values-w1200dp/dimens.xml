@@ -1,0 +1,30 @@
+<resources>
+    <dimen name="hitch_screen_padding">36dp</dimen>
+    <dimen name="hitch_gutter">24dp</dimen>
+    <dimen name="hitch_space">12dp</dimen>
+    <dimen name="hitch_card_padding">28dp</dimen>
+    <dimen name="hitch_radius">24dp</dimen>
+    <dimen name="hitch_control_radius">16dp</dimen>
+    <dimen name="hitch_badge_radius">8dp</dimen>
+    <dimen name="hitch_badge_padding_horizontal">12dp</dimen>
+    <dimen name="hitch_badge_padding_vertical">6dp</dimen>
+    <dimen name="hitch_callout_padding">16dp</dimen>
+    <!-- Wider vehicle panels use SEED t12/t13/t9/t7. -->
+    <dimen name="hitch_title_text">32sp</dimen>
+    <dimen name="hitch_title_line">42sp</dimen>
+    <dimen name="hitch_heading_text">40sp</dimen>
+    <dimen name="hitch_heading_line">52sp</dimen>
+    <dimen name="hitch_body_text">24sp</dimen>
+    <dimen name="hitch_body_line">32sp</dimen>
+    <dimen name="hitch_caption_text">20sp</dimen>
+    <dimen name="hitch_caption_line">27sp</dimen>
+    <dimen name="hitch_button_height">76dp</dimen>
+    <dimen name="hitch_header_button_height">60dp</dimen>
+    <dimen name="hitch_compact_button_padding">18dp</dimen>
+    <dimen name="hitch_avatar_small">144dp</dimen>
+    <dimen name="hitch_avatar_card">128dp</dimen>
+    <dimen name="hitch_avatar_medium">200dp</dimen>
+    <dimen name="hitch_avatar_large">360dp</dimen>
+    <dimen name="hitch_boarding_column_gap">48dp</dimen>
+    <dimen name="hitch_ride_inset">96dp</dimen>
+</resources>

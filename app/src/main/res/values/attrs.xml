@@ -1,0 +1,15 @@
+<resources>
+    <declare-styleable name="ContentColumn">
+        <attr name="contentMaxWidth" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="PleosColumns">
+        <attr name="columnMinWidth" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="AvatarView">
+        <attr name="avatarKind" format="enum">
+            <enum name="main" value="0" />
+            <enum name="alex" value="1" />
+            <enum name="sara" value="2" />
+        </attr>
+    </declare-styleable>
+</resources>

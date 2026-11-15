@@ -1,0 +1,11 @@
+<resources>
+    <string name="zip_pickup_door">딸깍 · 문 여는 소리</string>
+    <string name="zip_pickup_boarding">%1$s가 타고 있어요</string>
+    <string name="zip_pickup_ready">%1$s가 탔어요</string>
+    <string name="zip_pickup_wait">곧 %1$s가 먼저 말을 걸어요</string>
+    <string name="zip_ride_speaking">%1$s가 말하는 중</string>
+    <string name="zip_ride_reply">대답이 끝나면 %1$s가 이어서 말해요</string>
+    <string name="zip_drive_lock">주행 잠금</string>
+    <string name="zip_drive_voice">주행 중 · 음성으로 대화하세요</string>
+    <string name="zip_drive_paused">대화를 잠시 멈췄어요 · 정차 후 확인하세요</string>
+</resources>

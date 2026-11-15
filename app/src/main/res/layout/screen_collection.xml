@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:clipToPadding="false"
+    android:fillViewport="true">
+    <com.kotlinsun.hitchtalk.ui.ContentColumn
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="16dp"
+        app:contentMaxWidth="@dimen/hitch_overview_max_width">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/back"
+                style="@style/HitchButton.Compact"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="@string/secondary_back_symbol"
+                android:contentDescription="@string/secondary_back" />
+
+            <TextView
+                style="@style/HitchTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/collection_title"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:accessibilityHeading="true" />
+
+            <TextView
+                android:id="@+id/traveler_count"
+                style="@style/JourneyCaption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/journey_card_gray"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="6dp" />
+        </LinearLayout>
+
+        <include
+            android:id="@+id/readiness"
+            layout="@layout/view_readiness"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp" />
+
+        <com.kotlinsun.hitchtalk.ui.PleosColumns
+            android:id="@+id/traveler_cards"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:baselineAligned="false"
+            app:columnMinWidth="640dp">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/alex_card"
+                style="@style/JourneyCard"
+                android:layout_weight="1"
+                android:layout_marginEnd="16dp"
+                android:minHeight="440dp"
+                android:padding="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <com.kotlinsun.hitchtalk.avatar.AvatarView
+                        android:id="@+id/alexAvatar"
+                        android:layout_width="88dp"
+                        android:layout_height="88dp"
+                        android:background="@drawable/hitch_avatar_tile_alex"
+                        android:contentDescription="@string/hitch_alex"
+                        android:importantForAccessibility="noHideDescendants"
+                        app:avatarKind="alex" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp">
+                        <TextView
+                            style="@style/HitchHeading"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/collection_alex"
+                            android:textSize="24sp"
+                            android:accessibilityHeading="true" />
+
+                        <TextView
+                            style="@style/JourneyCaption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/collection_alex_role"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp">
+                    <ProgressBar
+                        android:id="@+id/alex_stage_1"
+                        style="@style/JourneyProgress"
+                        android:layout_width="0dp"
+                        android:layout_height="6dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="4dp"
+                        android:importantForAccessibility="no" />
+
+                    <ProgressBar
+                        android:id="@+id/alex_stage_2"
+                        style="@style/JourneyProgress"
+                        android:layout_width="0dp"
+                        android:layout_height="6dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="4dp"
+                        android:importantForAccessibility="no" />
+
+                    <ProgressBar
+                        android:id="@+id/alex_stage_3"
+                        style="@style/JourneyProgress"
+                        android:layout_width="0dp"
+                        android:layout_height="6dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="0dp"
+                        android:importantForAccessibility="no" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="4dp">
+                    <TextView
+                        android:id="@+id/alex_stage_label_1"
+                        style="@style/JourneyStageLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/journey_stage_first"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/alex_stage_label_2"
+                        style="@style/JourneyStageLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/journey_stage_comfortable"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/alex_stage_label_3"
+                        style="@style/JourneyStageLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/journey_stage_best"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/alex_level"
+                    style="@style/JourneyStageLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:accessibilityLiveRegion="polite" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/journey_card_white"
+                        android:padding="14dp">
+                        <TextView
+                            style="@style/JourneyCaption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/collection_meetings" />
+
+                        <TextView
+                            android:id="@+id/alex_history"
+                            style="@style/JourneyLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:background="@drawable/journey_card_white"
+                        android:padding="14dp">
+                        <TextView
+                            style="@style/JourneyCaption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/journey_dex_last_meeting" />
+
+                        <TextView
+                            android:id="@+id/alex_last_meeting"
+                            style="@style/JourneyLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/journey_dex_no_meeting"
+                            android:layout_marginTop="4dp"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    style="@style/JourneyCaption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/collection_memory"
+                    android:layout_marginTop="18dp"
+                    android:accessibilityHeading="true" />
+
+                <TextView
+                    android:id="@+id/alex_memory"
+                    style="@style/JourneyCaption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/collection_memory_empty"
+                    android:layout_marginTop="6dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:minHeight="28dp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/reboardAlex"
+                    style="@style/HitchButton.Secondary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/collection_reboard"
+                    android:layout_marginTop="28dp"
+                    android:contentDescription="@string/collection_reboard_alex" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/manage_alex"
+                    style="@style/HitchButton.Tertiary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/design_manage_memory"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="4dp"
+                    android:contentDescription="@string/design_manage_alex" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/sara_card"
+                style="@style/JourneyCard"
+                android:layout_weight="1"
+                android:layout_marginEnd="0dp"
+                android:minHeight="440dp"
+                android:padding="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <com.kotlinsun.hitchtalk.avatar.AvatarView
+                        android:id="@+id/saraAvatar"
+                        android:layout_width="88dp"
+                        android:layout_height="88dp"
+                        android:background="@drawable/hitch_avatar_tile_sara"
+                        android:contentDescription="@string/hitch_sara"
+                        android:importantForAccessibility="noHideDescendants"
+                        app:avatarKind="sara" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp">
+                        <TextView
+                            style="@style/HitchHeading"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/collection_sara"
+                            android:textSize="24sp"
+                            android:accessibilityHeading="true" />
+
+                        <TextView
+                            style="@style/JourneyCaption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/collection_sara_role"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp">
+                    <ProgressBar
+                        android:id="@+id/sara_stage_1"
+                        style="@style/JourneyProgress"
+                        android:layout_width="0dp"
+                        android:layout_height="6dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="4dp"
+                        android:importantForAccessibility="no" />
+
+                    <ProgressBar
+                        android:id="@+id/sara_stage_2"
+                        style="@style/JourneyProgress"
+                        android:layout_width="0dp"
+                        android:layout_height="6dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="4dp"
+                        android:importantForAccessibility="no" />
+
+                    <ProgressBar
+                        android:id="@+id/sara_stage_3"
+                        style="@style/JourneyProgress"
+                        android:layout_width="0dp"
+                        android:layout_height="6dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="0dp"
+                        android:importantForAccessibility="no" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="4dp">
+                    <TextView
+                        android:id="@+id/sara_stage_label_1"
+                        style="@style/JourneyStageLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/journey_stage_first"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/sara_stage_label_2"
+                        style="@style/JourneyStageLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/journey_stage_comfortable"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/sara_stage_label_3"
+                        style="@style/JourneyStageLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/journey_stage_best"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/sara_level"
+                    style="@style/JourneyStageLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:accessibilityLiveRegion="polite" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/journey_card_white"
+                        android:padding="14dp">
+                        <TextView
+                            style="@style/JourneyCaption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/collection_meetings" />
+
+                        <TextView
+                            android:id="@+id/sara_history"
+                            style="@style/JourneyLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:background="@drawable/journey_card_white"
+                        android:padding="14dp">
+                        <TextView
+                            style="@style/JourneyCaption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/journey_dex_last_meeting" />
+
+                        <TextView
+                            android:id="@+id/sara_last_meeting"
+                            style="@style/JourneyLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/journey_dex_no_meeting"
+                            android:layout_marginTop="4dp"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    style="@style/JourneyCaption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/collection_memory"
+                    android:layout_marginTop="18dp"
+                    android:accessibilityHeading="true" />
+
+                <TextView
+                    android:id="@+id/sara_memory"
+                    style="@style/JourneyCaption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/collection_memory_empty"
+                    android:layout_marginTop="6dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:minHeight="28dp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/reboardSara"
+                    style="@style/HitchButton.Secondary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/collection_reboard"
+                    android:layout_marginTop="28dp"
+                    android:contentDescription="@string/collection_reboard_sara" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/manage_sara"
+                    style="@style/HitchButton.Tertiary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/design_manage_memory"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="4dp"
+                    android:contentDescription="@string/design_manage_sara" />
+            </LinearLayout>
+        </com.kotlinsun.hitchtalk.ui.PleosColumns>
+    </com.kotlinsun.hitchtalk.ui.ContentColumn>
+</ScrollView>

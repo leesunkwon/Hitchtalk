@@ -1,0 +1,29 @@
+<resources>
+    <dimen name="hitch_screen_padding">20dp</dimen>
+    <dimen name="hitch_gutter">16dp</dimen>
+    <dimen name="hitch_space">8dp</dimen>
+    <dimen name="hitch_card_padding">16dp</dimen>
+    <dimen name="hitch_radius">16dp</dimen>
+    <dimen name="hitch_control_radius">12dp</dimen>
+    <dimen name="hitch_badge_radius">6dp</dimen>
+    <dimen name="hitch_badge_padding_horizontal">8dp</dimen>
+    <dimen name="hitch_badge_padding_vertical">4dp</dimen>
+    <dimen name="hitch_callout_padding">12dp</dimen>
+    <!-- SEED t8/t10/t6/t5 type scale using Android's user-scalable sp. -->
+    <dimen name="hitch_title_text">22sp</dimen>
+    <dimen name="hitch_title_line">30sp</dimen>
+    <dimen name="hitch_heading_text">26sp</dimen>
+    <dimen name="hitch_heading_line">35sp</dimen>
+    <dimen name="hitch_body_text">17sp</dimen>
+    <dimen name="hitch_body_line">24sp</dimen>
+    <dimen name="hitch_caption_text">14sp</dimen>
+    <dimen name="hitch_caption_line">20sp</dimen>
+    <dimen name="hitch_button_height">52dp</dimen>
+    <dimen name="hitch_header_button_height">48dp</dimen>
+    <dimen name="hitch_compact_button_padding">12dp</dimen>
+    <dimen name="hitch_avatar_small">48dp</dimen>
+    <dimen name="hitch_avatar_medium">72dp</dimen>
+    <dimen name="hitch_avatar_large">120dp</dimen>
+    <dimen name="hitch_boarding_column_gap">24dp</dimen>
+    <dimen name="hitch_ride_inset">0dp</dimen>
+</resources>

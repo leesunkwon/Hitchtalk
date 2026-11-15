@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_collection">도감</string>
+    <string name="home_settings">설정</string>
+    <string name="home_greeting">좋은 아침이에요</string>
+    <string name="home_description">출근길 방향으로 가는 여행자가 기다리고 있어요.</string>
+    <string name="home_alex">Alex</string>
+    <string name="home_alex_recommendation">평일 아침 추천</string>
+    <string name="home_alex_description">미국 · 테크 PM</string>
+    <string name="home_topic">대화 미리보기</string>
+    <string name="home_alex_quote">“Morning! Can you drop me near the office?”</string>
+    <string name="home_alex_topic_description">출근길에 나누는 비즈니스 영어</string>
+    <string name="home_sara">Sara</string>
+    <string name="home_sara_recommendation">주말 추천</string>
+    <string name="home_sara_description">호주 · 배낭여행자</string>
+    <string name="home_sara_quote">“G’day! Heading to the beach?”</string>
+    <string name="home_sara_topic_description">여행지에서 나누는 일상 영어</string>
+    <string name="home_board">여행자 태우기</string>
+    <string name="home_board_alex_description">Alex 태우기</string>
+    <string name="home_board_sara_description">Sara 태우기</string>
+    <string name="home_safety_note">화면 조작은 정차(P) 중에만 가능해요.</string>
+</resources>

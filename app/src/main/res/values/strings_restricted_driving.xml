@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="restricted_driving_title">화면 조작 제한</string>
+    <string name="restricted_driving_detail">주행 제한이 해제되면 사용할 수 있어요.</string>
+    <string name="restricted_driving_voice_active">음성 대화 중</string>
+    <string name="restricted_driving_voice_paused">음성 대화 일시 정지</string>
+    <string name="restricted_driving_voice_finishing">대화 마무리 중</string>
+    <string name="restricted_driving_voice_unavailable">음성 대화 중단</string>
+    <string name="restricted_driving_voice_preparing">음성 대화 준비 중</string>
+</resources>

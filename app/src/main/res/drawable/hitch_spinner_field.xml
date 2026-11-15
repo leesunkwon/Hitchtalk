@@ -1,0 +1,9 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/hitch_field" />
+    <item
+        android:width="24dp"
+        android:height="24dp"
+        android:gravity="end|center_vertical"
+        android:end="12dp"
+        android:drawable="@drawable/hitch_chevron_down" />
+</layer-list>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="journey_positive">#087F53</color>
+    <style name="JourneyCard">
+        <item name="android:background">@drawable/journey_card_gray</item>
+        <item name="android:padding">16dp</item>
+    </style>
+    <style name="JourneyCaption" parent="HitchCaption">
+        <item name="android:textSize">13sp</item>
+        <item name="android:lineHeight">19sp</item>
+    </style>
+    <style name="JourneyLabel" parent="JourneyCaption">
+        <item name="android:textColor">@color/hitch_ink</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="JourneyScore" parent="HitchTitle">
+        <item name="android:textSize">28sp</item>
+        <item name="android:lineHeight">36sp</item>
+    </style>
+    <style name="JourneyStageLabel" parent="JourneyCaption">
+        <item name="android:textSize">11sp</item>
+        <item name="android:lineHeight">16sp</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="JourneyProgress" parent="Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:indeterminate">false</item>
+        <item name="android:progressDrawable">@drawable/journey_progress</item>
+        <item name="android:max">100</item>
+        <item name="android:minHeight">6dp</item>
+        <item name="android:maxHeight">6dp</item>
+    </style>
+</resources>

@@ -1,0 +1,25 @@
+<resources>
+    <style name="Theme.HitchTalk.Base" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/hitch_brand_solid</item>
+        <item name="colorPrimaryVariant">@color/hitch_brand_pressed</item>
+        <item name="colorOnPrimary">@color/hitch_on_accent</item>
+        <item name="colorSecondary">@color/hitch_brand_solid</item>
+        <item name="colorOnSecondary">@color/hitch_on_accent</item>
+        <item name="colorSurface">@color/hitch_surface</item>
+        <item name="colorOnSurface">@color/hitch_ink</item>
+        <item name="colorError">@color/hitch_danger</item>
+        <item name="colorAccent">@color/hitch_accent</item>
+        <item name="android:colorAccent">@color/hitch_accent</item>
+        <item name="colorControlActivated">@color/hitch_accent</item>
+        <item name="android:textColorLink">@color/hitch_accent</item>
+        <item name="android:colorBackground">@color/hitch_panel</item>
+        <item name="android:windowBackground">@color/hitch_panel</item>
+        <item name="android:statusBarColor">@color/hitch_panel</item>
+        <item name="android:navigationBarColor">@color/hitch_panel</item>
+        <item name="android:forceDarkAllowed">false</item>
+    </style>
+    <style name="Theme.HitchTalk" parent="Theme.HitchTalk.Base">
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+</resources>

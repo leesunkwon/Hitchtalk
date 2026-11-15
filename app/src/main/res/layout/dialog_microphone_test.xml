@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/hitch_gutter">
+        <TextView
+            style="@style/HitchBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/microphone_test_detail" />
+        <TextView
+            android:id="@+id/status"
+            style="@style/HitchCallout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hitch_gutter"
+            android:accessibilityLiveRegion="polite" />
+        <TextView
+            android:id="@+id/elapsed"
+            style="@style/HitchCaption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hitch_space"
+            android:visibility="invisible" />
+        <ProgressBar
+            android:id="@+id/input_level"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:layout_marginTop="@dimen/hitch_space"
+            android:contentDescription="@string/microphone_test_input_level"
+            android:indeterminate="false"
+            android:max="32767"
+            android:progressTint="@color/hitch_accent"
+            android:visibility="invisible" />
+        <com.kotlinsun.hitchtalk.ui.PleosColumns
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hitch_gutter"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            app:columnMinWidth="@dimen/hitch_action_row_min_width">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/record"
+                style="@style/HitchButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/microphone_test_start_recording" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/play"
+                style="@style/HitchButton.Outline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/hitch_space"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:text="@string/microphone_test_play" />
+        </com.kotlinsun.hitchtalk.ui.PleosColumns>
+        <TextView
+            android:id="@+id/emulator_hint"
+            style="@style/HitchCaption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hitch_gutter"
+            android:text="@string/microphone_test_emulator_hint"
+            android:visibility="gone" />
+    </LinearLayout>
+</ScrollView>

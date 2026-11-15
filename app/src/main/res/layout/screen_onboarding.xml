@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical">
+            <TextView style="@style/HitchTitle" android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="@string/hitch_brand" />
+            <TextView style="@style/HitchBadge" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@string/hitch_parked" />
+        </LinearLayout>
+        <com.kotlinsun.hitchtalk.ui.PleosColumns android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical"
+            android:orientation="horizontal" android:baselineAligned="false" app:columnMinWidth="800dp">
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:paddingVertical="28dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:gravity="center" android:orientation="horizontal" android:baselineAligned="false">
+                    <com.kotlinsun.hitchtalk.avatar.AvatarView android:id="@+id/alexAvatar"
+                        android:layout_width="120dp" android:layout_height="120dp"
+                        android:background="@drawable/hitch_avatar_tile_alex"
+                        android:importantForAccessibility="noHideDescendants" app:avatarKind="alex" />
+                    <com.kotlinsun.hitchtalk.avatar.AvatarView android:id="@+id/saraAvatar"
+                        android:layout_width="120dp" android:layout_height="120dp"
+                        android:background="@drawable/hitch_avatar_tile_sara"
+                        android:importantForAccessibility="noHideDescendants" app:avatarKind="sara" />
+                </LinearLayout>
+                <TextView style="@style/HitchBadge" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp" android:background="@drawable/hitch_badge_brand"
+                    android:textColor="@color/hitch_accent" android:text="@string/hitch_fictional" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1.5" android:layout_marginStart="32dp" android:orientation="vertical">
+                <TextView style="@style/HitchLabel" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:textColor="@color/hitch_accent" android:text="@string/hitch_onboarding_kicker" />
+                <TextView style="@style/HitchHeading" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" android:accessibilityHeading="true" android:text="@string/zip_welcome_heading" />
+                <TextView style="@style/HitchCaption" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp" android:text="@string/zip_welcome_detail" />
+                <LinearLayout style="@style/HitchCard" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp" android:orientation="horizontal" android:gravity="center_vertical">
+                    <ImageView android:layout_width="48dp" android:layout_height="48dp"
+                        android:background="@drawable/hitch_avatar_tile_alex" android:padding="12dp"
+                        android:src="@drawable/zip_ic_microphone" android:importantForAccessibility="no" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical">
+                        <TextView style="@style/HitchLabel" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/hitch_mic" />
+                        <TextView style="@style/HitchCaption" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/hitch_mic_details" />
+                    </LinearLayout>
+                    <androidx.appcompat.widget.AppCompatButton android:id="@+id/microphone"
+                        style="@style/HitchButton.Compact" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="@string/hitch_allow" android:layout_marginStart="8dp" />
+                </LinearLayout>
+                <com.kotlinsun.hitchtalk.ui.PleosColumns android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp" android:orientation="horizontal" android:baselineAligned="false" app:columnMinWidth="440dp">
+                    <androidx.appcompat.widget.AppCompatButton android:id="@+id/start" style="@style/HitchButton"
+                        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/hitch_start" />
+                    <androidx.appcompat.widget.AppCompatButton android:id="@+id/login" style="@style/HitchButton.Secondary"
+                        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                        android:layout_marginStart="8dp" android:text="@string/zip_welcome_email_login" />
+                </com.kotlinsun.hitchtalk.ui.PleosColumns>
+                <TextView style="@style/HitchCaption" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp" android:text="@string/zip_welcome_privacy" />
+            </LinearLayout>
+        </com.kotlinsun.hitchtalk.ui.PleosColumns>
+    </LinearLayout>
+</ScrollView>

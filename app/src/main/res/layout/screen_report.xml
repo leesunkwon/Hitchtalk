@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:clipToPadding="false"
+    android:fillViewport="true">
+    <com.kotlinsun.hitchtalk.ui.ContentColumn
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="16dp"
+        app:contentMaxWidth="@dimen/hitch_detail_max_width">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/back"
+                style="@style/HitchButton.Compact"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="@string/secondary_back_symbol"
+                android:contentDescription="@string/secondary_back" />
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/HitchTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/report_title"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:accessibilityHeading="true" />
+
+            <TextView
+                android:id="@+id/report_status"
+                style="@style/JourneyCaption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/report_analysis_pending"
+                android:layout_marginStart="12dp"
+                android:maxWidth="140dp"
+                android:accessibilityLiveRegion="polite" />
+        </LinearLayout>
+
+        <com.kotlinsun.hitchtalk.ui.PleosColumns
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:baselineAligned="false"
+            android:id="@+id/report_columns"
+            android:layout_marginTop="16dp"
+            app:columnMinWidth="640dp">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="2"
+                android:layout_marginEnd="16dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    style="@style/JourneyCard"
+                    android:layout_marginBottom="12dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <TextView
+                            style="@style/JourneyLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/report_metric_speech"
+                            android:layout_weight="1"
+                            android:labelFor="@id/speech_value" />
+
+                        <TextView
+                            android:id="@+id/speech_change"
+                            style="@style/JourneyCaption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/journey_positive"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/speech_value"
+                        style="@style/JourneyScore"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/report_metric_unavailable"
+                        android:layout_marginTop="6dp" />
+
+                    <TextView
+                        android:id="@+id/speech_count"
+                        style="@style/JourneyCaption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp" />
+
+                    <ProgressBar
+                        android:id="@+id/speech_progress"
+                        style="@style/JourneyProgress"
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:layout_marginTop="10dp"
+                        android:importantForAccessibility="no" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    style="@style/JourneyCard"
+                    android:layout_marginBottom="12dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <TextView
+                            style="@style/JourneyLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/report_metric_completion"
+                            android:layout_weight="1"
+                            android:labelFor="@id/completion_value" />
+
+                        <TextView
+                            android:id="@+id/completion_change"
+                            style="@style/JourneyCaption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/journey_positive"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/completion_value"
+                        style="@style/JourneyScore"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/report_metric_unavailable"
+                        android:layout_marginTop="6dp" />
+
+                    <TextView
+                        android:id="@+id/completion_count"
+                        style="@style/JourneyCaption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp" />
+
+                    <ProgressBar
+                        android:id="@+id/completion_progress"
+                        style="@style/JourneyProgress"
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:layout_marginTop="10dp"
+                        android:importantForAccessibility="no" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    style="@style/JourneyCard"
+                    android:layout_marginBottom="12dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <TextView
+                            style="@style/JourneyLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/report_metric_variety"
+                            android:layout_weight="1"
+                            android:labelFor="@id/variety_value" />
+
+                        <TextView
+                            android:id="@+id/variety_change"
+                            style="@style/JourneyCaption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/journey_positive"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/variety_value"
+                        style="@style/JourneyScore"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/report_metric_unavailable"
+                        android:layout_marginTop="6dp" />
+
+                    <TextView
+                        android:id="@+id/variety_count"
+                        style="@style/JourneyCaption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp" />
+
+                    <ProgressBar
+                        android:id="@+id/variety_progress"
+                        style="@style/JourneyProgress"
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:layout_marginTop="10dp"
+                        android:importantForAccessibility="no" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/report_details"
+                    style="@style/JourneyCaption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/report_estimate_note"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="3">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/journey_card_lavender"
+                    android:gravity="center_vertical"
+                    android:padding="14dp">
+                    <com.kotlinsun.hitchtalk.avatar.AvatarView
+                        android:id="@+id/traveler_avatar"
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:importantForAccessibility="noHideDescendants"
+                        app:avatarKind="alex" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp">
+                        <TextView
+                            style="@style/JourneyCaption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/journey_relationship_title"
+                            android:textColor="#5B43FF" />
+
+                        <TextView
+                            android:id="@+id/relationship_value"
+                            style="@style/JourneyLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/report_relationship_empty"
+                            android:layout_marginTop="2dp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/relationship_meetings"
+                        style="@style/JourneyCaption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/correction_cards"
+                    android:layout_marginTop="12dp" />
+
+                <TextView
+                    android:id="@+id/learning_value"
+                    style="@style/JourneyCaption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/report_learning_empty"
+                    android:background="@drawable/journey_card_gray"
+                    android:padding="16dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/summary_section"
+                    style="@style/JourneyCard"
+                    android:layout_marginTop="12dp"
+                    android:visibility="gone">
+                    <TextView
+                        style="@style/JourneyCaption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/report_summary_label"
+                        android:textColor="#5B43FF" />
+
+                    <TextView
+                        android:id="@+id/summary_value"
+                        style="@style/JourneyCaption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/hitch_ink" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/memory_section"
+                    style="@style/JourneyCard"
+                    android:layout_marginTop="12dp"
+                    android:visibility="gone">
+                    <TextView
+                        android:id="@+id/memory_label"
+                        style="@style/JourneyCaption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/report_memory_candidate_label"
+                        android:textColor="#5B43FF" />
+
+                    <TextView
+                        android:id="@+id/memory_value"
+                        style="@style/JourneyCaption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/hitch_ink" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/confirm_memory"
+                    style="@style/HitchButton.Tertiary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/report_memory_review"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </com.kotlinsun.hitchtalk.ui.PleosColumns>
+
+        <com.kotlinsun.hitchtalk.ui.PleosColumns
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:baselineAligned="false"
+            android:layout_marginTop="28dp"
+            android:gravity="end"
+            app:columnMinWidth="360dp">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/collection"
+                style="@style/HitchButton.Secondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/journey_report_collection"
+                android:minWidth="144dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/done"
+                style="@style/HitchButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/journey_report_confirm"
+                android:layout_marginStart="8dp"
+                android:minWidth="144dp" />
+        </com.kotlinsun.hitchtalk.ui.PleosColumns>
+    </com.kotlinsun.hitchtalk.ui.ContentColumn>
+</ScrollView>

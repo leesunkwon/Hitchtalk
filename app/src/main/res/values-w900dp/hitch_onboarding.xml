@@ -1,0 +1,14 @@
+<resources>
+    <style name="HitchOnboardingRow">
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="HitchOnboardingVisual">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">2</item>
+        <item name="android:layout_marginHorizontal">@dimen/hitch_boarding_column_gap</item>
+    </style>
+    <style name="HitchOnboardingActions">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">3</item>
+    </style>
+</resources>

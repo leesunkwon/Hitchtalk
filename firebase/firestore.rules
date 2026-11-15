@@ -1,0 +1,115 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function owner(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+    function persona() {
+      return request.resource.data.personaId in ['alex', 'sara']
+        && request.resource.data.updatedAt == request.time;
+    }
+    function available(uid, personaId) {
+      let data = getAfter(/databases/$(database)/documents/users/$(uid)).data;
+      return data.get('deletionInProgress', false) != true
+        && !(personaId in data.get('blockedPersonas', []));
+    }
+    function userData() {
+      return request.resource.data.schemaVersion == 1
+        && request.resource.data.englishLevel in ['beginner', 'intermediate', 'advanced']
+        && request.resource.data.preferredPersonaId in ['alex', 'sara']
+        && request.resource.data.personaSelectionMode in ['recommended', 'manual']
+        && request.resource.data.updatedAt == request.time
+        && profileData();
+    }
+    function profileData() {
+      let data = request.resource.data;
+      return !data.keys().hasAny(['displayName', 'birthDate', 'gender', 'profileComplete']) ||
+        data.profileComplete == true
+        && data.displayName is string && data.displayName.size() > 0 && data.displayName.size() <= 80
+        && data.birthDate is string && data.birthDate.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+        && data.gender is string && data.gender.size() > 0 && data.gender.size() <= 40;
+    }
+    function score(value) {
+      return value == null || value is int && value >= 0 && value <= 100;
+    }
+    function scoreData(sessionId) {
+      return persona() && request.resource.data.sessionId == sessionId
+        && score(request.resource.data.speechVolumeScore)
+        && score(request.resource.data.sentenceCompletenessScore)
+        && score(request.resource.data.expressionVarietyScore)
+        && request.resource.data.userTurnCount is int
+        && request.resource.data.userTurnCount >= 0
+        && request.resource.data.englishWordCount is int
+        && request.resource.data.englishWordCount >= 0;
+    }
+    match /personas/{personaId} {
+      allow read: if request.auth != null;
+      allow write: if false;
+    }
+    match /users/{uid} {
+      allow read, delete: if owner(uid);
+      allow create: if owner(uid) && userData()
+        && request.resource.data.createdAt == request.time;
+      allow update: if owner(uid) && userData()
+        && request.resource.data.createdAt == resource.data.createdAt;
+
+      match /sessions/{sessionId} {
+        function sessionData() {
+          let deletionDates = getAfter(/databases/$(database)/documents/users/$(uid)).data.get('sessionsDeletedBefore', {});
+          return persona() && request.resource.data.schemaVersion == 1
+            && request.resource.data.endedAt is timestamp
+            && request.resource.data.endedAt > deletionDates.get(request.resource.data.personaId, timestamp.date(1970, 1, 1))
+            && request.resource.data.userTurnCount is int
+            && request.resource.data.userTurnCount >= 0
+            && request.resource.data.englishWordCount is int
+            && request.resource.data.englishWordCount >= 0
+            && request.resource.data.activeConversationSec is int
+            && request.resource.data.activeConversationSec >= 0
+            && request.resource.data.xpAwarded is int
+            && request.resource.data.xpAwarded >= 0 && request.resource.data.xpAwarded <= 10
+            && request.resource.data.summaryKo is string
+            && request.resource.data.summaryKo.size() <= 1200
+            && request.resource.data.corrections is list
+            && request.resource.data.corrections.size() <= 3;
+        }
+        allow read, delete: if owner(uid);
+        allow create: if owner(uid) && sessionData() && available(uid, request.resource.data.personaId)
+          && request.resource.data.createdAt == request.time;
+        allow update: if owner(uid) && sessionData() && available(uid, request.resource.data.personaId)
+          && request.resource.data.createdAt == resource.data.createdAt;
+      }
+      match /memories/{personaId} {
+        allow read, delete: if owner(uid);
+        allow create, update: if owner(uid) && persona() && available(uid, personaId)
+          && request.resource.data.personaId == personaId
+          && request.resource.data.confirmedByUser == true
+          && request.resource.data.userJob is string
+          && request.resource.data.userJob.size() <= 120
+          && request.resource.data.userLikes is list
+          && request.resource.data.userLikes.size() <= 5
+          && request.resource.data.lastPromise is string
+          && request.resource.data.lastPromise.size() <= 240;
+      }
+      match /intimacy/{personaId} {
+        allow read, delete: if owner(uid);
+        allow create, update: if owner(uid) && persona() && available(uid, personaId)
+          && request.resource.data.personaId == personaId
+          && request.resource.data.xp is int && request.resource.data.xp >= 0
+          && request.resource.data.meetingCount is int && request.resource.data.meetingCount >= 0
+          && request.resource.data.dailyXp is int
+          && request.resource.data.dailyXp >= 0 && request.resource.data.dailyXp <= 20
+          && request.resource.data.level in ['acquaintance', 'comfortable', 'bestFriend'];
+      }
+      match /englishScores/{sessionId} {
+        allow read, delete: if owner(uid);
+        allow create: if owner(uid) && scoreData(sessionId) && available(uid, request.resource.data.personaId)
+          && request.resource.data.createdAt == request.time;
+        allow update: if owner(uid) && scoreData(sessionId) && available(uid, request.resource.data.personaId)
+          && request.resource.data.createdAt == resource.data.createdAt;
+      }
+    }
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
