@@ -534,15 +534,14 @@ class MainActivity : AppCompatActivity() {
         val canEditKey = canEditOpenAiKey(state)
         openAiKeyStatus.setText(when {
             state.openAiKeyBusy -> R.string.openai_key_working
-            state.usesBundledOpenAiKey -> R.string.openai_key_bundled
             state.openAiKeyConfigured -> R.string.openai_key_configured
             else -> R.string.openai_key_missing
         })
-        openAiKeyUsage.setText(if (state.usesBundledOpenAiKey) R.string.openai_key_bundled_usage else R.string.openai_key_usage)
-        openAiKeyEdit.isVisible = !state.usesBundledOpenAiKey
+        openAiKeyUsage.setText(R.string.openai_key_usage)
+        openAiKeyEdit.isVisible = true
         openAiKeyEdit.setText(if (state.openAiKeyConfigured) R.string.openai_key_replace else R.string.openai_key_add)
         openAiKeyEdit.isEnabled = canEditKey
-        openAiKeyRemove.isVisible = state.openAiKeyConfigured && !state.usesBundledOpenAiKey
+        openAiKeyRemove.isVisible = state.openAiKeyConfigured
         openAiKeyRemove.isEnabled = canEditKey
         openAiConnectionNote.isVisible = state.openAiKeyConfigured
         openAiConnectionCheck.isVisible = state.openAiKeyConfigured
@@ -1463,7 +1462,7 @@ class MainActivity : AppCompatActivity() {
             !state.busy && !state.openAiKeyBusy && state.openAiCheck != OpenAiCheck.CHECKING
 
     private fun editOpenAiKey() {
-        if (state.usesBundledOpenAiKey || !canEditOpenAiKey(state)) return
+        if (!canEditOpenAiKey(state)) return
         val input = AppCompatEditText(this).apply {
             setSingleLine(true)
             inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD

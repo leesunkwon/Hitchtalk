@@ -4,10 +4,8 @@
     <string name="openai_key_required">OpenAI API 키가 필요해요</string>
     <string name="openai_key_required_detail">설정에서 본인 OpenAI 계정의 API 키를 등록해 주세요.</string>
     <string name="openai_key_open_settings">키 설정 열기</string>
-    <string name="openai_key_usage">키는 이 기기에 저장돼요. OpenAI API 사용량과 요금은 연결된 계정에 반영돼요.</string>
+    <string name="openai_key_usage">키는 이 기기에 암호화해 저장해요. API 사용량과 요금은 연결된 OpenAI 계정에 반영돼요.</string>
     <string name="openai_key_configured">키가 등록되어 있어요</string>
-    <string name="openai_key_bundled">앱 내장 키 사용 중</string>
-    <string name="openai_key_bundled_usage">앱에 내장된 키로 OpenAI에 연결해요. API 사용량과 요금은 이 키의 OpenAI 프로젝트에 반영돼요.</string>
     <string name="openai_key_missing">등록된 키가 없어요</string>
     <string name="openai_key_working">키 설정을 처리하고 있어요…</string>
     <string name="openai_key_add">API 키 등록</string>

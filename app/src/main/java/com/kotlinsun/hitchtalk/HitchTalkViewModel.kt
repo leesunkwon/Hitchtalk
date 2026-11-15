@@ -16,7 +16,6 @@ import com.kotlinsun.hitchtalk.ai.OpenAiConversationClient
 import com.kotlinsun.hitchtalk.ai.OpenAiException
 import com.kotlinsun.hitchtalk.ai.OpenAiFailure
 import com.kotlinsun.hitchtalk.ai.OpenAiKeyStore
-import com.kotlinsun.hitchtalk.ai.BUNDLED_OPENAI_API_KEY
 import com.kotlinsun.hitchtalk.data.ConfirmedMemory
 import com.kotlinsun.hitchtalk.data.CorrectionRecord
 import com.kotlinsun.hitchtalk.data.HitchTalkRepository
@@ -113,7 +112,6 @@ data class HitchTalkState(
     val simulatedBrake: Boolean = false,
     val simulatedHvac: Boolean = false,
 ) {
-    val usesBundledOpenAiKey: Boolean get() = BUNDLED_OPENAI_API_KEY.isNotBlank()
     val canInteract: Boolean get() = safety.canInteract
     val isPaused: Boolean get() = voice.phase == VoicePhase.PAUSED
 }
@@ -603,7 +601,7 @@ class HitchTalkViewModel(application: Application) : AndroidViewModel(applicatio
     fun openSettings() = navigate(setOf(Screen.HOME, Screen.COLLECTION), Screen.SETTINGS)
 
     fun saveOpenAiKey(value: String) {
-        if (current.usesBundledOpenAiKey || !canUseAccount() || !foreground || current.screen != Screen.SETTINGS) return
+        if (!canUseAccount() || !foreground || current.screen != Screen.SETTINGS) return
         val key = value.trim()
         if (!OpenAiKeyStore.isValid(key)) {
             update { it.copy(message = R.string.openai_key_invalid) }
@@ -613,7 +611,7 @@ class HitchTalkViewModel(application: Application) : AndroidViewModel(applicatio
     }
 
     fun removeOpenAiKey() {
-        if (current.usesBundledOpenAiKey || !canUseAccount() || !foreground || current.screen != Screen.SETTINGS) return
+        if (!canUseAccount() || !foreground || current.screen != Screen.SETTINGS) return
         changeOpenAiKey(null)
     }
 
@@ -960,7 +958,7 @@ class HitchTalkViewModel(application: Application) : AndroidViewModel(applicatio
             val records = loadedHistory ?: (
                 readCloud(emptyList(), failures) { repository.loadPendingSessions() } + fallback?.previousReports.orEmpty()
             )
-            val localKey = BUNDLED_OPENAI_API_KEY.takeIf(String::isNotBlank) ?: if (fallback == null) {
+            val localKey = if (fallback == null) {
                 withContext(Dispatchers.IO) { runCatching { openAiKeys.read(uid) }.getOrNull() }
             } else openAiCredential?.takeIf { it.uid == uid }?.key
             if (isCurrentAccount(version, uid)) {

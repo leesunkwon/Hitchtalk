@@ -5,15 +5,6 @@ plugins {
     id("com.google.gms.google-services") version "4.5.0"
 }
 
-val localProperties = Properties().apply {
-    val propertiesFile = rootProject.file("local.properties")
-    if (propertiesFile.isFile) propertiesFile.inputStream().use { load(it) }
-}
-val openAiApiKey = localProperties.getProperty("OPENAI_API_KEY", "").trim()
-require(openAiApiKey.all { it in '!'..'~' }) {
-    "OPENAI_API_KEY in local.properties must contain only printable ASCII characters without spaces."
-}
-val openAiApiKeyLiteral = "\"${openAiApiKey.replace("\\", "\\\\").replace("\"", "\\\"")}\""
 val releaseSigningFile = rootProject.file("keystore.properties")
 val releaseSigningProperties = Properties().apply {
     if (releaseSigningFile.isFile) releaseSigningFile.inputStream().use { load(it) }
@@ -36,13 +27,12 @@ android {
         applicationId = "com.kotlinsun.hitchtalk"
         minSdk = 29
         targetSdk = 37
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         manifestPlaceholders["hitchTalkDrivingMode"] = "false"
         buildConfigField("boolean", "PLEOS_DRIVING_PREVIEW", "false")
-        buildConfigField("String", "OPENAI_API_KEY", openAiApiKeyLiteral)
     }
 
     signingConfigs {

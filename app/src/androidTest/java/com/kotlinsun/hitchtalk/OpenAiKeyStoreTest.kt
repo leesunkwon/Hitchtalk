@@ -44,4 +44,26 @@ class OpenAiKeyStoreTest {
             store.remove(other)
         }
     }
+
+    @Test
+    fun replacementAndRemovalPersistAcrossStoreInstances() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val owner = UUID.randomUUID().toString()
+        val original = "sk-test-original-" + UUID.randomUUID()
+        val replacement = "sk-test-replacement-" + UUID.randomUUID()
+        val store = OpenAiKeyStore(context)
+        try {
+            assertNull(store.read(owner))
+            store.write(owner, original)
+            assertEquals(original, OpenAiKeyStore(context).read(owner))
+            store.write(owner, replacement)
+            assertEquals(replacement, OpenAiKeyStore(context).read(owner))
+            store.remove(owner)
+            assertNull(OpenAiKeyStore(context).read(owner))
+            store.remove(owner)
+            assertNull(OpenAiKeyStore(context).read(owner))
+        } finally {
+            store.remove(owner)
+        }
+    }
 }

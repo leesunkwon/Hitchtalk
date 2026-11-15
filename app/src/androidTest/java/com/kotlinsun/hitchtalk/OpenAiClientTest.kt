@@ -156,6 +156,57 @@ class OpenAiClientTest {
         assertFalse(connections.single().instanceFollowRedirects)
     }
 
+    @Test
+    fun buildConfigHasNoBundledOpenAiCredentialField() {
+        val context = androidx.test.platform.app.InstrumentationRegistry.getInstrumentation().targetContext
+        val config = Class.forName(context.packageName + ".BuildConfig")
+        assertFalse(config.declaredFields.any { it.name == "OPENAI_API_KEY" })
+    }
+
+    @Test
+    fun credentialRegistrationReplacementAndRemovalUseTheCurrentLocalValue() = runBlocking {
+        var credential: String? = null
+        val connections = mutableListOf<StubConnection>()
+        val response = """
+            {"replyEn":"Do you like pears?","shadowCorrection":null,"memoryCandidates":[],"topicTag":"food"}
+        """.trimIndent()
+        val client = OpenAiConversationClient({ credential }) { url ->
+            StubConnection(url, envelope(response)).also(connections::add)
+        }
+        val request = DialogueRequest("alex", turns)
+
+        assertFalse(client.isConfigured)
+        val initialFailure = runCatching { client.reply(request) }.exceptionOrNull()
+        assertEquals(OpenAiFailure.CONFIGURATION, (initialFailure as? OpenAiException)?.kind)
+        assertTrue(connections.isEmpty())
+
+        credential = "fixture-first-local-key"
+        assertTrue(client.isConfigured)
+        client.reply(request)
+        assertEquals("Bearer fixture-first-local-key", connections.last().getRequestProperty("Authorization"))
+
+        credential = "fixture-replacement-local-key"
+        client.reply(request)
+        assertEquals("Bearer fixture-replacement-local-key", connections.last().getRequestProperty("Authorization"))
+        assertEquals(2, connections.size)
+
+        credential = null
+        assertFalse(client.isConfigured)
+        val removedFailure = runCatching { client.reply(request) }.exceptionOrNull()
+        assertEquals(OpenAiFailure.CONFIGURATION, (removedFailure as? OpenAiException)?.kind)
+        assertEquals(2, connections.size)
+    }
+
+    @Test
+    fun connectionFailuresDistinguishInvalidCredentialsAndRateLimits() = runBlocking {
+        val failures = listOf(401 to OpenAiFailure.AUTHENTICATION, 429 to OpenAiFailure.RATE_LIMIT)
+        failures.forEach { (status, expected) ->
+            val client = client { url -> StubConnection(url, "", status = status) }
+            val failure = runCatching { client.reply(DialogueRequest("alex", turns)) }.exceptionOrNull()
+            assertEquals(expected, (failure as? OpenAiException)?.kind)
+        }
+    }
+
     private fun client(openConnection: (URL) -> HttpURLConnection) =
         OpenAiConversationClient({ "fixture-api-key" }, openConnection).also { assertTrue(it.isConfigured) }
 
